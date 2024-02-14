@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Casamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Casa comigo?</h1>
+        <button id="simButton">Sim</button>
+        <button id="naoButton">Não</button>
+    </div>
+
+    <script>
+        const naoButton = document.getElementById('naoButton');
+        const simButton = document.getElementById('simButton');
+
+        naoButton.addEventListener('click', () => {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            const randomX = Math.random() * (screenWidth - 100);
+            const randomY = Math.random() * (screenHeight - 50);
+
+            naoButton.style.position = 'absolute';
+            naoButton.style.left = randomX + 'px';
+            naoButton.style.top = randomY + 'px';
+        });
+
+        simButton.addEventListener('click', () => {
+            // Redirecionar para a imagem do convite de casamento (JPEG)
+            window.location.href = 'file:///C:/Users/joice.rezende/Pictures/convite.png';
+        });
+    </script>
+</body>
+</html>
